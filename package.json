@@ -1,0 +1,19 @@
+{
+  "name": "hackfterwork",
+  "version": "1.0.0",
+  "description": "bbm hackfterwork project OMG much awesome project!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twltwl/hackfterwork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twltwl/hackfterwork/issues"
+  },
+  "homepage": "https://github.com/twltwl/hackfterwork#readme"
+}
