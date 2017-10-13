@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start:api": "node api/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": ["prettier --no-semi --single-quote --write", "git add"]
   },
   "repository": {
     "type": "git",
@@ -18,4 +21,9 @@
   },
   "homepage": "https://github.com/twltwl/hackfterwork#readme",
   "dependencies": {}
+  "devDependencies": {
+    "lint-staged": "^4.2.3",
+    "prettier": "^1.7.4",
+    "husky": "^0.14.3"
+  }
 }
