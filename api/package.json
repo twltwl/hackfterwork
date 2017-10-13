@@ -2,9 +2,9 @@
   "name": "hackfterwork",
   "version": "1.0.0",
   "description": "bbm hackfterwork project OMG much awesome project!",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start:api": "node api/app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +17,8 @@
     "url": "https://github.com/twltwl/hackfterwork/issues"
   },
   "homepage": "https://github.com/twltwl/hackfterwork#readme",
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "postgraphql": "^3.5.0"
+  }
 }

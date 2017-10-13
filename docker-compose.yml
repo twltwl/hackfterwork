@@ -13,6 +13,17 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
 
+  api:
+    build:
+      context: ./api
+    image: hackfterwork-api
+    environment:
+      - DB_USER=docker
+      - DB_PASS=docker
+      - DB_SCHEMA=docker
+      - DB_HOST=db
+    command: bash -c "sleep 10 && npm start"
+
 
 volumes:
   db-data:
