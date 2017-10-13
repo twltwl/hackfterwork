@@ -4,7 +4,10 @@
   "description": "bbm hackfterwork project OMG much awesome project!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": ["prettier --no-semi --single-quote --write", "git add"]
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/twltwl/hackfterwork/issues"
   },
-  "homepage": "https://github.com/twltwl/hackfterwork#readme"
+  "homepage": "https://github.com/twltwl/hackfterwork#readme",
+  "devDependencies": {
+    "lint-staged": "^4.2.3",
+    "prettier": "^1.7.4",
+    "husky": "^0.14.3"
+  },
+  "dependencies": {
+
+  }
 }
