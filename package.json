@@ -8,7 +8,10 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["prettier --no-semi --single-quote --write", "git add"]
+    "*.js": [
+      "prettier --no-semi --single-quote --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -20,7 +23,7 @@
     "url": "https://github.com/twltwl/hackfterwork/issues"
   },
   "homepage": "https://github.com/twltwl/hackfterwork#readme",
-  "dependencies": {}
+  "dependencies": {},
   "devDependencies": {
     "lint-staged": "^4.2.3",
     "prettier": "^1.7.4",
