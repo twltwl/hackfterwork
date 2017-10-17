@@ -13,12 +13,12 @@ CREATE TABLE articles (
     id SERIAL PRIMARY KEY,
     name character varying(255),
     heading character varying(255),
+    image character varying(255),
     preamble text,
     text text,
     created_at timestamp DEFAULT now(),
     updated_at timestamp DEFAULT now(),
-    author_id int REFERENCES authors(id),
-    image character varying(255),
+    author_id int REFERENCES authors(id)
 );
 
 -- Add brands
