@@ -36,6 +36,7 @@ const allArticles = gql`
           heading
           text
           createdAt
+          image
           authorByAuthorId {
             id
             name
