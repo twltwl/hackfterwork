@@ -1,8 +1,18 @@
-const express = require('express');
+const koa = require('koa');
 const postgraphql = require('postgraphql').postgraphql;
 const config = require('./config');
+const routes = require('./routes');
+const app = new koa();
+const koaBody = require('koa-body');
+app.use(koaBody());
 
-const app = express();
+app.use(async(ctx, next)=> {
+    ctx.set('Access-Control-Allow-Origin', '*')
+    ctx.set('Access-Control-Allow-Methods', 'GET, POST')
+    ctx.set('Access-Control-Allow-Headers', 'Content-Type')
+    await next();
+})
+app.use(routes.routes());  
 
 app.use(postgraphql(`postgres://${config.db.user}:${config.db.pass}@${config.db.host}:${config.db.port}/${config.db.schema}`, {
     graphiql: true,
@@ -10,4 +20,6 @@ app.use(postgraphql(`postgres://${config.db.user}:${config.db.pass}@${config.db.
     graphiqlRoute: '/nippe/graphiql'
 }));
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log('listening on port: 3000')
+});
