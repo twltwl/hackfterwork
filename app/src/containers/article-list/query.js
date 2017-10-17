@@ -1,15 +1,22 @@
 import { gql } from 'react-apollo'
 
 const allArticles = gql`
-  query allArticles {
+query allArticlesQuery {
+  allArticles {
     edges {
       node {
-        data
         id
         name
+        text
+        heading
+        authorByAuthorId {
+          id
+          name
+        }
       }
     }
   }
+}}
 `
 
-export { allArticles }
+export default { apa: allArticles }
