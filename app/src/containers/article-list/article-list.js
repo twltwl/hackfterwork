@@ -12,8 +12,12 @@ class ArticleList extends Component {
           this.props.allArticlesQuery.allArticles &&
           this.props.allArticlesQuery.allArticles.edges.map(article => (
             <div key={article.node.id}>
+              <img alt="" src={article.node.image} />
               <h2>{article.node.heading}</h2>
-              {article.node.text}
+              <p>{article.node.preamble}</p>
+              <p>{article.node.text}</p>
+              <p>{article.node.createdAt}</p>
+              <p>{article.node.authorByAuthorId.name}</p>
             </div>
           ))}
       </div>
@@ -28,7 +32,11 @@ const allArticles = gql`
         node {
           id
           name
+          preamble
           heading
+          text
+          createdAt
+          image
           authorByAuthorId {
             id
             name
