@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
+import ArticleList from '../../containers/article-list/article-list'
 
 class App extends Component {
   render() {
-    return <div>hej</div>
+    return (
+      <div>
+        <ArticleList />
+      </div>
+    )
   }
 }
 

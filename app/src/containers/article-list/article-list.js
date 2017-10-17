@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import { graphql } from 'react-apollo'
+import { allArticles } from './query'
 
-class App extends Component {
+class ArticleList extends Component {
   render() {
+    console.log(this.props)
     return <div>hej</div>
   }
 }
 
-export default App
+export default graphql(allArticles, { name: 'allArticles' })(ArticleList)

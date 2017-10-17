@@ -9,7 +9,7 @@ import {
 } from 'react-apollo'
 
 const networkInterface = createNetworkInterface({
-  uri: 'http://localhost:3000'
+  uri: 'http://localhost:3000/nippe/graphql'
 })
 
 const client = new ApolloClient({

@@ -1,8 +1,15 @@
-import { graphql, gql } from 'react-apollo'
+import { gql } from 'react-apollo'
 
-const ALL_ARTICLES = gql`
-  query {
-    name
-    text
+const allArticles = gql`
+  query allArticles {
+    edges {
+      node {
+        data
+        id
+        name
+      }
+    }
   }
 `
+
+export { allArticles }
