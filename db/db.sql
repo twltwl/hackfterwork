@@ -33,3 +33,14 @@ INSERT INTO articles (name, heading, preamble, text, author_id) VALUES ('test1',
 INSERT INTO articles (name, heading, preamble, text, author_id) VALUES ('test2', 'heading2', 'preamble2', 'text2', 2);
 INSERT INTO articles (name, heading, preamble, text, author_id) VALUES ('test3', 'heading3', 'preamble3', 'text3', 1);
 INSERT INTO articles (name, heading, preamble, text, author_id) VALUES ('test4', 'heading4', 'preamble4', 'text4', 2);
+
+-- Add search function
+CREATE FUNCTION search_articles(search text) RETURNS SETOF articles AS $$
+  SELECT *
+  FROM articles
+  WHERE
+    name ilike ('%' || search || '%') OR
+    heading ilike ('%' || search || '%') OR
+    preamble ilike ('%' || search || '%') OR
+    text ilike ('%' || search || '%')
+  $$ LANGUAGE SQL STABLE;
