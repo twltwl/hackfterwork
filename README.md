@@ -9,11 +9,11 @@ OMG much awesome project!
 
 ## setup
 
-### DB
-`cd db; docker-compose up`
+```bash
+cd db
+docker-compose build
+docker-compose up
 
-### App
-`...`
-
-### Backend
-`...`
+cd app
+npm start
+```
