@@ -22,6 +22,8 @@ services:
       - DB_PASS=docker
       - DB_SCHEMA=docker
       - DB_HOST=db
+    ports:
+      - "3000:3000"
     command: bash -c "sleep 10 && npm start"
 
 
