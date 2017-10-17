@@ -44,3 +44,10 @@ CREATE FUNCTION search_articles(search text) RETURNS SETOF articles AS $$
     preamble ilike ('%' || search || '%') OR
     text ilike ('%' || search || '%')
   $$ LANGUAGE SQL STABLE;
+
+-- Add 'get articles by author_id' function
+CREATE FUNCTION articlesByAuthor(authorId int) RETURNS SETOF articles AS $$
+  SELECT *
+  FROM articles
+  WHERE author_id = authorId
+$$ LANGUAGE SQL STABLE;
